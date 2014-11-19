@@ -7,10 +7,13 @@
 
 int main()
 {
-	functions weight;
-	variables var1;
-	var1.bulletWeight
-	{
-		weight.bulletInput()
-	}
+	variables v;
+	
+	v.getBulletWeight();
+	v.getShootDistance();
+	v.getBulletImpulse();
+	v.getTravelTime();
+	v.getBulletForce();
+	v.getBulletPression();
+	v.getBulletMPa();
 }
