@@ -4,32 +4,29 @@ using namespace std;
 
 
 functions::functions()
-{
-
-}
+{}
 
 int functions::safeInput()
 {
-		int input = 0;
+		int sInput = 0;
 		do
 		{
-			cin >> input;
+			cin >> sInput;
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		} while (cin.fail());
-		return input;
+		return sInput;
 }
-
 double functions::bulletInput()
 {
 	
 		cout << "Please enter the weight of your bullet in gramms: \n";
-		int input = 0;
+		int bInput = 0;
 		while (true)
 		{
-			input = safeInput();
+			bInput = safeInput();
 
-			if (input < 0)
+			if (bInput <= 0)
 			{
 				cout << "Add a number which is higher than 0.\n";
 			}
@@ -41,18 +38,18 @@ double functions::bulletInput()
 
 
 		}
-		return input;
+		cout << bInput << endl;
+		return bInput;
 }
-
 double functions::distanceInput()
 {
 	cout << "Please enter the distance from where you want to shoot in meters: \n";
-	double input = 0;
+	double dInput = 0;
 	while (true)
 	{
-		input = safeInput();
+		dInput = safeInput();
 
-		if (input <= 0)
+		if (dInput < 0)
 		{
 			cout << "Add a number which is higher than or equal to 0\n";
 		}
@@ -61,5 +58,6 @@ double functions::distanceInput()
 			break;
 		}
 	}
-	return input;
+	cout << dInput << endl;
+	return dInput;
 }
