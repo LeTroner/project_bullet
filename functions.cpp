@@ -8,7 +8,7 @@ functions::functions()
 
 int functions::safeInput()
 {
-		int sInput = 0;
+		int sInput;
 		do
 		{
 			cin >> sInput;
@@ -17,6 +17,7 @@ int functions::safeInput()
 		} while (cin.fail());
 		return sInput;
 }
+
 double functions::bulletInput()
 {
 	
@@ -28,7 +29,8 @@ double functions::bulletInput()
 
 			if (bInput <= 0)
 			{
-				cout << "Add a number which is higher than 0.\n";
+				cout << "Add a number which is higher than 0,\n";
+				cout <<"to be able to set the weight of the bullet.\n";
 			}
 			else
 			{
@@ -38,9 +40,9 @@ double functions::bulletInput()
 
 
 		}
-		cout << bInput << endl;
 		return bInput;
 }
+
 double functions::distanceInput()
 {
 	cout << "Please enter the distance from where you want to shoot in meters: \n";
@@ -51,13 +53,14 @@ double functions::distanceInput()
 
 		if (dInput < 0)
 		{
-			cout << "Add a number which is higher than or equal to 0\n";
+			cout << "Add a number which is higher than or equal to 0,\n";
+			cout << "to be able to set the distance from where you want to shoot. \n";
 		}
 		else
 		{
 			break;
 		}
 	}
-	cout << dInput << endl;
+	cout << dInput << "(m) is the distance where you are shooting from. \n";
 	return dInput;
 }
