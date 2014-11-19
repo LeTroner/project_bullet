@@ -6,67 +6,15 @@
 
 using namespace std;
 
-class inputCheck
-{
-	public:
-		inputCheck();
-		virtual int safeInput()
-			{
-			int input = 0;
-			do
-				{
-					cin >> input;
-					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			} while (cin.fail());
-			return input;
-			}
-};
 
-class functions: public inputCheck
+
+class functions
 {
 	public:
 		functions();
-		double bulletInput()
-		{
-			cout << "Please enter the weight of your bullet in gramms: \n";
-			double input = 0;
-			while (true)
-			{
-				input = safeInput();
-
-				if (input < 0)
-				{
-					cout << "Add a number which is higher than 0.\n";
-				}
-				else
-				{
-					break;
-				}
-
-
-
-			}
-
-		}
-		double distanceInput()
-		{
-			cout << "Please enter the distance from where you want to shoot in meters: \n";
-			double input = 0;
-			while (true)
-			{
-				input = safeInput();
-				
-					if (input <= 0)
-					{
-					cout << "Add a number which is higher than or equal to 0\n";
-					}
-					else
-					{
-						break;
-					}
-			}
-		}
+		int safeInput();
+		double bulletInput();
+		double distanceInput();
 			
 };
 
@@ -75,22 +23,22 @@ class variables
 	public:
 		variables();
 
-		double bulletWeight();
-		double shootDistance();
-		double bulletImpulse();
-		double travelTime();
-		double bulletForce();
-		long double bulletPression();
+		double getBulletWeight();
+		double getShootDistance();
+		double getBulletImpulse();
+		double getTravelTime();
+		double getBulletForce();
+		long double getBulletPression();
+		long double getBulletMPa();
 
-	protected:
-		double weightOfBulletG;
-		double distanceInM;
-		double impulseOfBullet;
-		double time;
-		double force;
+		double setWeightOfBulletG;
+		double setDistanceInM;
+		double setImpulseOfBullet;
+		double setTime;
+		double setForce;
 
-		long double pression;
-		long double mPa;
+		long double setPression;
+		long double setMPa;
 
 		const double pi = 3.141592654;
 		const double speedOfBullet = 750;
