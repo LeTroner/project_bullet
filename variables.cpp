@@ -6,45 +6,46 @@ using namespace std;
 variables::variables()
 {}
 variables v;
+variables *vP = &v;
 double variables::getBulletWeight()
 {
-	v.setWeightOfBulletG = functions::bulletInput();
-	v.setWeightOfBulletG /= 1000; //this creates kilogramm from gramm
-	cout << v.setWeightOfBulletG << "(kg) is the weight of the bullet. \n";
-	return v.setWeightOfBulletG;
+	vP->setWeightOfBulletG = functions::bulletInput();
+	vP->setWeightOfBulletG /= 1000; //this creates kilogramm from gramm
+	cout << vP->setWeightOfBulletG << "(kg) is the weight of the bullet. \n";
+	return vP->setWeightOfBulletG;
 	
 }
 double variables::getShootDistance()
 {
-	return v.setDistanceInM = functions::distanceInput();;
+	return vP->setDistanceInM = functions::distanceInput();;
 }
 double variables::getBulletImpulse()
 {
-	v.setImpulseOfBullet = v.setWeightOfBulletG * speedOfBullet;
-	cout << v.setImpulseOfBullet << "(kg*m/s) is the impulse of the bullet. \n";
-	return v.setImpulseOfBullet;
+	vP->setImpulseOfBullet = vP->setWeightOfBulletG * speedOfBullet;
+	cout << vP->setImpulseOfBullet << "(kg*m/s) is the impulse of the bullet. \n";
+	return vP->setImpulseOfBullet;
 	
 }
 double variables::getTravelTime()
 {
-	v.setTime = v.setDistanceInM / speedOfBullet;
-	cout << v.setTime << "(s)is the travel time. \n";
-	return v.setTime;
+	vP->setTime = vP->setDistanceInM / speedOfBullet;
+	cout << vP->setTime << "(s)is the travel time. \n";
+	return vP->setTime;
 }
 double variables::getBulletForce()
 {
-	v.setForce = v.setImpulseOfBullet / v.setTime;
-	cout << v.setForce << "(N) is the force of the bullet. \n";
-	return v.setForce;
+	vP->setForce = vP->setImpulseOfBullet / vP->setTime;
+	cout << vP->setForce << "(N) is the force of the bullet. \n";
+	return vP->setForce;
 }
 long double variables::getBulletPression()
 {
-	v.setPression = v.setForce / surfaceOfBulletInMeters;
-	return v.setPression;
+	vP->setPression = vP->setForce / surfaceOfBulletInMeters;
+	return vP->setPression;
 }
 long double variables::getBulletMPa()
 {
-	v.setMPa = v.setPression / 1000000;
-	cout << v.setMPa << "(mPa) is the pression of the bullet on a(n) " << surfaceOfBulletInMeters << "(m^2) wall. \n";
-	return v.setMPa;
+	vP->setMPa = vP->setPression / 1000000;
+	cout << vP->setMPa << "(mPa) is the pression of the bullet on a(n) " << surfaceOfBulletInMeters << "(m^2) wall. \n";
+	return vP->setMPa;
 }
