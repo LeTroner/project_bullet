@@ -8,12 +8,23 @@
 int main()
 {
 	variables v;
+	variables cObject;
+	variables *cP = &cObject;
+
 	
-	v.getBulletWeight();
-	v.getShootDistance();
-	v.getBulletImpulse();
-	v.getTravelTime();
-	v.getBulletForce();
-	v.getBulletPression();
-	v.getBulletMPa();
+
+	cP->getBulletWeight();
+	cP->getShootDistance();
+	cP->getBulletImpulse();
+	cP->getTravelTime();
+	cP->getBulletForce();
+	cP->getBulletPression();
+	cP->getBulletMPa();
+	cout << cP->setWeightOfBulletG << "setWeight\n";
+
+
+	
+
+	cin.get();
+
 }
