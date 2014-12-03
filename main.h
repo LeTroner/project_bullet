@@ -6,19 +6,22 @@
 
 using namespace std;
 
-
-
-class functions
+class inputCheck
+{
+public:
+	int safeInput();
+	
+};
+class functions: public inputCheck
 {
 	public:
-		functions();
-		int safeInput();
-		double bulletInput();
-		double distanceInput();
+			functions();
+			double bulletInput();
+			double distanceInput();
 			
 };
 
-class variables
+class variables:public functions
 {
 	public:
 		variables();
