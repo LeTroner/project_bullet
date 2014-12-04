@@ -7,45 +7,58 @@ variables::variables()
 {}
 variables v;
 variables *vP = &v;
-double variables::getBulletWeight()
+double functions::getWeight(double gWt)//variables::setBulletWeight(double &bW)
 {
-	vP->setWeightOfBulletG = functions::bulletInput();
-	vP->setWeightOfBulletG /= 1000; //this creates kilogramm from gramm
-	cout << vP->setWeightOfBulletG << "(kg) is the weight of the bullet. \n";
-	return vP->setWeightOfBulletG;
+	gWt = functions::bulletInput();
+	gWt /= 1000; //this creates kilogramm from gramm
+	cout << gWt << "(kg) is the weight of the bullet. \n";
+	vP->setBulletWeight(gWt);
+	return 0;
 	
 }
-double variables::getShootDistance()
+double functions::getDistance(double gDe)
 {
-	return vP->setDistanceInM = functions::distanceInput();;
+	gDe = functions::distanceInput();
+	cout << gDe << "(m) is the distance from where you are shooting. \n";
+	vP->setShootDistance(gDe);
+	return 0; 
 }
-double variables::getBulletImpulse()
+
+double variables::getImpulseOfBullet(double gIt)
 {
-	vP->setImpulseOfBullet = vP->setWeightOfBulletG * speedOfBullet;
-	cout << vP->setImpulseOfBullet << "(kg*m/s) is the impulse of the bullet. \n";
-	return vP->setImpulseOfBullet;
+	gIt = vP->weight * speedOfBullet;
+	cout << gIt << "(kg*m/s) is the impulse of the bullet. \n";
+	vP->setBulletImpulse(gIt);
+	return 0;
 	
 }
-double variables::getTravelTime()
+
+double variables::getTime(double gTe)
 {
-	vP->setTime = vP->setDistanceInM / speedOfBullet;
-	cout << vP->setTime << "(s)is the travel time. \n";
-	return vP->setTime;
+	gTe = vP->distance / speedOfBullet;
+	cout << gTe << "(s)is the travel time. \n";
+	vP->setTravelTime(gTe);
+	return 0;
 }
-double variables::getBulletForce()
+
+double variables::getForce(double gFe)
 {
-	vP->setForce = vP->setImpulseOfBullet / vP->setTime;
-	cout << vP->setForce << "(N) is the force of the bullet. \n";
-	return vP->setForce;
+	gFe = vP->impulse / vP->time;
+	cout << gFe << "(N) is the force of the bullet. \n";
+	vP->setBulletForce(gFe);
+	return 0;
 }
-long double variables::getBulletPression()
+
+long double variables::getPression(long double gPn)
 {
-	vP->setPression = vP->setForce / surfaceOfBulletInMeters;
-	return vP->setPression;
+	gPn = vP->force / surfaceOfBulletInMeters;
+	vP->setBulletPression(gPn);
+	return 0;
 }
-long double variables::getBulletMPa()
+long double variables::getMPa(long double gMa)
 {
-	vP->setMPa = vP->setPression / 1000000;
-	cout << vP->setMPa << "(mPa) is the pression of the bullet on a(n) " << surfaceOfBulletInMeters << "(m^2) wall. \n";
-	return vP->setMPa;
+	gMa = vP->pression / 1000000;
+	cout << gMa << "(mPa) is the pression of the bullet on a(n) " << surfaceOfBulletInMeters << "(m^2) wall. \n";
+	vP->setBulletMPa(gMa);
+	return 0;
 }
