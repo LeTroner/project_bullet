@@ -18,6 +18,9 @@ class functions: public inputCheck
 			functions();
 			double bulletInput();
 			double distanceInput();
+
+			double getDistance(double gDi);
+			double getWeight(double gWe);
 			
 };
 
@@ -26,23 +29,50 @@ class variables:public functions
 	public:
 		variables();
 
-		double getBulletWeight();
-		double getShootDistance();
-		double getBulletImpulse();
-		double getTravelTime();
-		double getBulletForce();
-		long double getBulletPression();
-		long double getBulletMPa();
+		void setBulletWeight(double sW)
+		{
+			weight = sW;
+		};
+		void setShootDistance(double sD)
+		{
+			distance = sD;
+		};
+		void setBulletImpulse(double sImp)
+		{
+			impulse = sImp;
+		};
+		void setTravelTime(double sT)
+		{
+			time = sT;
+		};
+		void setBulletForce(double sF)
+		{
+			force = sF;
+		};
+		void setBulletPression(double sP)
+		{
+			pression = sP;
+		};
+		void setBulletMPa(double sMpa)
+		{
+			mPa = sMpa;
+		};
 
-		double setWeightOfBulletG;
-		double setDistanceInM;
-		double setImpulseOfBullet;
-		double setTime;
-		double setForce;
+		double getImpulseOfBullet(double gImpB);
+		double getTime(double gTime);
+		double getForce(double gForce);
+		long double getPression(long double gPres);
+		long double getMPa(long double gMpa);
 
-		long double setPression;
-		long double setMPa;
+private:
 
+	double weight;
+	double distance;
+	double impulse;
+	double time;
+	double force;
+	double pression;
+	double mPa;
 		const double pi = 3.141592654;
 		const double speedOfBullet = 750;
 		const long double surfaceOfBulletInMeters = pi * 0.001 * 0.001;
