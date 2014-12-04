@@ -7,20 +7,26 @@
 
 int main()
 {
+	functions f;
+	functions *fP = &f;
 	variables v;
-	variables cObject;
-	variables *cP = &cObject;
+	variables *cP = &v;
 
+	double gWe = 0;
+	double gDi = 0;
+	double gImpB = 0;
+	double gTime = 0;
+	double gForce = 0;
+	long double gPres = 0;
+	long double gMpa = 0;
 	
-
-	cP->getBulletWeight();
-	cP->getShootDistance();
-	cP->getBulletImpulse();
-	cP->getTravelTime();
-	cP->getBulletForce();
-	cP->getBulletPression();
-	cP->getBulletMPa();
-	cout << cP->setWeightOfBulletG << "setWeight\n";
+	fP->getWeight(gWe);
+	fP->getDistance(gDi);
+	cP->getImpulseOfBullet(gImpB);
+	cP->getTime(gTime);
+	cP->getForce(gForce);
+	cP->getPression(gPres);
+	cP->getMPa(gMpa);
 
 
 	
