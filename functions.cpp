@@ -61,6 +61,6 @@ double functions::distanceInput()
 			break;
 		}
 	}
-	cout << dInput << "(m) is the distance where you are shooting from. \n";
+
 	return dInput;
 }
