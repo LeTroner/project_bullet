@@ -9,7 +9,7 @@ using namespace std;
 class inputCheck
 {
 public:
-	int safeInput();
+	double safeInput();
 	
 };
 class functions: public inputCheck
@@ -23,12 +23,19 @@ class functions: public inputCheck
 			double getWeight(double gWe);
 			
 };
-
 class variables:public functions
 {
 	public:
 		variables();
 
+		void setBulletSpeed(double sBSp)
+		{
+			speedOfBullet = sBSp;
+		};
+		void setBulletSurface(double sBSurf)
+		{
+			surfaceOfBullet = sBSurf;
+		};
 		void setBulletWeight(double sW)
 		{
 			weight = sW;
@@ -57,7 +64,8 @@ class variables:public functions
 		{
 			mPa = sMpa;
 		};
-
+		double getSpeedOfBullet(double gSpB);
+		long double getSurfaceOfBullet(double gSrfB);
 		double getImpulseOfBullet(double gImpB);
 		double getTime(double gTime);
 		double getForce(double gForce);
@@ -73,13 +81,17 @@ private:
 	double force;
 	double pression;
 	double mPa;
-		const double pi = 3.141592654;
-		const double speedOfBullet = 750;
-		const long double surfaceOfBulletInMeters = pi * 0.001 * 0.001;
+		double speedOfBullet;
+		long double surfaceOfBullet;
 
 };
 
-
+class bulletChoose:public variables
+{
+public:
+	bulletChoose();
+	double bulletChoosing();
+};
 
 
 
