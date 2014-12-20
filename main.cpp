@@ -7,6 +7,8 @@
 
 int main()
 {
+	bulletChoose b;
+	bulletChoose *bP = &b;
 	functions f;
 	functions *fP = &f;
 	variables v;
@@ -20,8 +22,10 @@ int main()
 	long double gPres = 0;
 	long double gMpa = 0;
 	
+	bP->bulletChoosing();
 	fP->getWeight(gWe);
 	fP->getDistance(gDi);
+	cout << "\n Calculating . . . \n" << endl;
 	cP->getImpulseOfBullet(gImpB);
 	cP->getTime(gTime);
 	cP->getForce(gForce);
