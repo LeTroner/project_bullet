@@ -31,6 +31,7 @@ int main()
 	cP->getForce(gForce);
 	cP->getPression(gPres);
 	cP->getMPa(gMpa);
+	bP->savingOption();
 
 
 	
