@@ -2,7 +2,6 @@
 #define MAIN_H_INCLUDED
 
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -25,9 +24,10 @@ class functions: public inputCheck
 };
 class variables:public functions
 {
+	friend class dataSave;
 	public:
 		variables();
-
+		~variables();
 		void setBulletSpeed(double sBSp)
 		{
 			speedOfBullet = sBSp;
@@ -83,19 +83,25 @@ private:
 	double mPa;
 		double speedOfBullet;
 		long double surfaceOfBullet;
-
+	
+	friend void recording();
 };
 
-class bulletChoose:public variables
+class choose:public variables
 {
 public:
-	bulletChoose();
+	choose();
 	double bulletChoosing();
+	void savingOption();
 };
 
-
-
-
+class dataSave: public variables
+{
+	friend class bulletChoose;
+	public:
+		dataSave();
+		void recording();
+};
 
 
 
