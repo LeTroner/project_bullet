@@ -7,8 +7,8 @@
 
 int main()
 {
-	bulletChoose b;
-	bulletChoose *bP = &b;
+	choose b;
+	choose *bP = &b;
 	functions f;
 	functions *fP = &f;
 	variables v;
