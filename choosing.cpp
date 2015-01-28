@@ -19,6 +19,8 @@ double bulletChoose::bulletChoosing()
 	double surfaceBullet;
 	const double pi = 3.141592654;
 	cout << "The program begins, first step, you need to choose from different types of bullet: \n";
+	"Press (1) for the first bullet. Its speed is 300 (m/s) and its diameter is 0.03 (m)\n"
+	"Press (2) for the second bullet. Its speed is 800 (m/s) and its diameter is 0.0003 (m)\n";
 	while (true)
 	{
 		chooseNum = safeInput();
@@ -57,4 +59,21 @@ double bulletChoose::bulletChoosing()
 		break;
 	}
 	return 0;
+}
+void choose::savingOption()
+{
+	dataSave rec;
+	int answer;
+	cout << "If you want to save your stats, please press 1 for a yes and anything else for a no.\n";
+	cin >> answer;
+	switch (answer)
+	{
+	case 1:
+		cout << "Saving in progress...\n";
+		rec.recording();
+		cout << "All your stats are now saved in the records.txt.\n";
+		break;
+	default:
+		break;
+	}
 }
