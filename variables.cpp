@@ -73,4 +73,25 @@ long double variables::getMPa(long double gMa)
 	cout << gMa << "(mPa) is the pression of the bullet on a(n) " << vP->surfaceOfBullet << "(m^2) wall. \n";
 	vP->setBulletMPa(gMa);
 	return 0;
-}
+}dataSave::dataSave()
+{
+
+};
+void dataSave::recording()
+{
+	ofstream recorder("records.txt");
+	recorder << vP->surfaceOfBullet << " (m^2)\n";
+	recorder << vP->speedOfBullet << " (m/s)\n";
+	recorder << vP->weight << " (kg)\n";
+	recorder << vP->distance << " (m)\n";
+	recorder << vP->impulse << " (kg*m/s)\n";
+	recorder << vP->time << " (s)\n";
+	recorder << vP->force << " (N)\n";
+	recorder << vP->mPa << " (mPa)\n";
+	recorder.close();
+
+};
+variables::~variables()
+{
+
+};
