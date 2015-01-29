@@ -18,9 +18,12 @@ double bulletChoose::bulletChoosing()
 	double diameterBullet;
 	double surfaceBullet;
 	const double pi = 3.141592654;
-	cout << "The program begins, first step, you need to choose from different types of bullet: \n";
-	"Press (1) for the first bullet. Its speed is 300 (m/s) and its diameter is 0.03 (m)\n"
-	"Press (2) for the second bullet. Its speed is 800 (m/s) and its diameter is 0.0003 (m)\n";
+	cout << "===The program begins, first step,\n"
+		"you may choose from two different types of bullet.===\n\n"
+		"Press (1) for the first bullet. \n"
+		"Its speed is 300 (m/s) and its diameter is 0.03 (m)\n\n"
+		"Press (2) for the second bullet. \n"
+		"Its speed is 800 (m/s) and its diameter is 0.0003 (m)\n\n";
 	while (true)
 	{
 		chooseNum = safeInput();
@@ -64,7 +67,8 @@ void choose::savingOption()
 {
 	dataSave rec;
 	int answer;
-	cout << "If you want to save your stats, please press 1 for a yes and anything else for a no.\n";
+	cout << "If you want to save your stats,\n"
+		"please press 1 for a yes and anything else for a no.\n";
 	cin >> answer;
 	switch (answer)
 	{
