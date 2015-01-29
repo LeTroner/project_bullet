@@ -95,7 +95,7 @@ public:
 	void savingOption();
 };
 
-class dataSave: public variables
+class dataSave
 {
 	friend class bulletChoose;
 	public:
